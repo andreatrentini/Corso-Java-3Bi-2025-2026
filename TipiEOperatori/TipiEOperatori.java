@@ -1,5 +1,7 @@
 package TipiEOperatori;
 
+import java.util.Scanner;
+
 public class TipiEOperatori {
     public static void main(String[] args) {
         /*
@@ -36,6 +38,64 @@ public class TipiEOperatori {
          * ++: incrementa di uno il valore della variabile
          * --: decrementa di uno il valore della variabile
          */
+
+         /*
+          * Operatori logici binari di confronto
+          Sono operatori che coinvolgono due valori
+          NB: sono chiamati operatori perché restituiscono un valore
+          ==
+          !=
+          >
+          <
+          >=
+          <=     
+          
+          Operatore logico unario
+          ! nega il valore
+          */
+
+            /*
+             * Acquisizione valori da tastiera
+             */
+            Scanner tastiera;
+            tastiera = new Scanner(System.in);
+
+            // Scanner tastiera = new Scanner(System.in);
+
+            int x, y;
+
+            System.out.print("Inserisci un intero: ");
+            x = tastiera.nextInt();
+            System.out.print("Inserisci un intero: ");
+            y = tastiera.nextInt();
+
+          /*
+          Blocco di codice con esempio da non seguire */
+          boolean controllo;
+          controllo = (x == y);
+          // Il confornto nella condizione dell'istruzione if NON SERVE!!!
+          if (controllo == false) {
+            // Tutte le istruzioni comprese nelle parentesi graffe verranno eseguite se la condizione è vera
+          } 
+          else {
+            // Tutte le istruzioni comprese nelle parentesi graffe verranno eseguite se la condizione è falsa
+          }         
+
+          // Versione corretta
+          if (controllo) {
+            // ...
+          }
+
+          // In alternativa...
+          if (x == y) {
+            //...
+          }
+
+          /*
+           * Operatori booleani binari (usano due valori):
+           * &&: and logico
+           * !! or logico
+           */
 
          
     }

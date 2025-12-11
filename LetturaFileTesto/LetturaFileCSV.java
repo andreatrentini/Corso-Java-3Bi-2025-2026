@@ -57,6 +57,7 @@ public class LetturaFileCSV {
                 // Converto datiRiga[5] (contiene i prezzi della merce acquistata) in fomato double
                 Double prezzoRiga = Double.parseDouble(datiRiga[5]);
                 unitPrices[contatore] = prezzoRiga;
+                contatore++;
             }  
             // e' sempre buona pratica chiudere il BufferedReader        
             // fr.close() NON SERVE.  
@@ -65,7 +66,7 @@ public class LetturaFileCSV {
             // Adesso ho un array di double con tutti i prezzi degli articoli
 
             // Calcolo di min, max, media, moda, mediana, varianza sqm
-            
+
         }
         catch (IOException error) {
             System.out.println("Errore durante la lettura del file: " + error.getMessage());

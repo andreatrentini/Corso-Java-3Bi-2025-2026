@@ -1,0 +1,24 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class LetturaFileTesto {
+    public static void main(String[] args) {
+        try {
+            FileReader fr = new FileReader("LetturaFileTesto/SupermarketSales2.csv");
+            BufferedReader br = new BufferedReader(fr);
+            String riga;
+            riga = br.readLine();
+            while (riga != null) {
+                String dati = riga.split(",");
+                System.out.println(riga);
+                riga = br.readLine();
+            }
+            br.close();
+            fr.close();            
+        }
+        catch (IOException error) {
+            System.err.println(error);
+        }
+    }
+}

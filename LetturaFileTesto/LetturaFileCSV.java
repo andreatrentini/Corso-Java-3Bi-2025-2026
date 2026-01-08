@@ -3,6 +3,34 @@ import java.io.BufferedReader;
 import java.io.IOException;
 
 public class LetturaFileCSV {
+    private static double minimoDouble(double[] dati) {
+        double min = Double.MAX_VALUE;
+        for (int i = 0; i < dati.length; i++) {
+            if (dati[i] < min) {
+                min = dati[i];
+            }
+        }
+        return min;
+    }
+    
+    private static double massimoDouble(double[] dati) {
+        double max = Double.MIN_VALUE;
+        for (int i = 0; i < dati.length; i++) {
+            if (dati[i] > max) {
+                max = dati[i];
+            }
+        }
+        return max;
+    }
+
+    private static double mediaDouble(double[] dati) {
+        double somma = 0; 
+        for (int i = 0; i < dati.length; i++) {
+            somma = somma+ dati[i];
+        } 
+        return somma / dati.length;
+    }
+
     public static void main(String[] args) {
         // Oggetto che ci consente di accedere al buffer di memoria nel quale
         // il PC memorizza ogni riga letta dal file
@@ -57,6 +85,7 @@ public class LetturaFileCSV {
                 // Converto datiRiga[5] (contiene i prezzi della merce acquistata) in fomato double
                 Double prezzoRiga = Double.parseDouble(datiRiga[5]);
                 unitPrices[contatore] = prezzoRiga;
+                System.out.println(unitPrices[contatore]);
                 contatore++;
             }  
             // e' sempre buona pratica chiudere il BufferedReader        
@@ -66,6 +95,10 @@ public class LetturaFileCSV {
             // Adesso ho un array di double con tutti i prezzi degli articoli
 
             // Calcolo di min, max, media, moda, mediana, varianza sqm
+
+            System.out.println("Prezzo minimo: " + minimoDouble(unitPrices));
+            System.out.println("Prezzo massimo: " + massimoDouble(unitPrices));
+
 
         }
         catch (IOException error) {

@@ -1,4 +1,4 @@
-package GestioneVendite.gestionevendite;
+package gestionevendite.gestionevendite;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -229,6 +229,32 @@ public class Vendite {
         }
 
         return valorePiuFrequente;
+    }
+
+    public static double scarti(int valore, double media) {
+        return Math.pow(valore-media, 2);
+    }
+
+    public static double varianza(int dati[]) {
+        double m = media(dati);
+        double sommaScarti = 0;
+        for (int i = 0; i < dati.length; i++) {
+            sommaScarti += scarti(dati[i], m);
+        }
+        return sommaScarti / dati.length;
+    }
+
+    public static double sqm(int dati[]) {
+        return Math.sqrt(varianza(dati));
+    }
+
+    public static int cercaPrimo(int dati[], int valore) {
+        for (int i = 0; i < dati.length; i++) {
+            if (valore == dati[i]) {
+                return i;
+            }
+        }
+        return -1;        
     }
 
     public static void main(String[] args) {

@@ -17,8 +17,8 @@ public class Log {
      * @param separatore
      */
     public Log(String riga, String separatore) {
-        String datiGrezzi[] = riga.split(separatore);
         try {            
+            String datiGrezzi[] = riga.split(separatore);
             this.id = Integer.parseInt(datiGrezzi[0]);
             this.tipoUtente = datiGrezzi[1];
             this.allarmeIDS = datiGrezzi[2];
